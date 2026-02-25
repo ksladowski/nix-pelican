@@ -91,7 +91,7 @@ let
       ''}
 
       ${lib.optionalString (cfg.mail.passwordFile != null) ''
-        replace-secret '@MAIL_PASSWORD@' ${lib.escapeShellArg cfg.mail.passwordFile} ${cfg.dataDir}/.env
+        replace-secret '@MAIL_PASSWORD@' ${cfg.mail.passwordFile} ${cfg.dataDir}/.env
       ''}
 
       ${lib.optionalString (cfg.extraEnvironmentFile != null) ''
